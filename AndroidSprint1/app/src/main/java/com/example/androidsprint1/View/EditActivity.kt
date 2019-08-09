@@ -21,7 +21,7 @@ class EditActivity : AppCompatActivity() {
         }
 
         save.setOnClickListener {
-            val intentSaveMovie = Intent(this, MainActivity::class.java)
+            val intentSaveMovie = Intent()
             intentSaveMovie.putExtra("movie", createMovie())
 
             setResult(Activity.RESULT_OK, intentSaveMovie)
