@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, MOVIE_REQUEST_CODE)
         }
     }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if(requestCode == MOVIE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
