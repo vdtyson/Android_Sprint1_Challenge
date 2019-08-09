@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         for ((index, movie) in movieList.withIndex())
             createTextView(movie, index)
     }
-
     override fun onPostResume() {
         refreshMovieList()
         super.onPostResume()
@@ -50,9 +49,9 @@ class MainActivity : AppCompatActivity() {
                 populateMovieData()
             }
         }
-
         super.onActivityResult(requestCode, resultCode, data)
     }
+
 // Line 58-72: Programmatically creates TextView from user input and adds a listener to the data to retrieve Movie Data and Edit it
     fun createTextView(movie: Movie, index: Int): TextView {
 
@@ -69,11 +68,11 @@ class MainActivity : AppCompatActivity() {
 
         // sets on click listener for new TextView which adds an intent to edit list item
         newMovieView.setOnClickListener{
+
             val intent = Intent(this, EditActivity::class.java)
-
             intent.putExtra(EDIT_MOVIE_DATA, movie)
-
-            startActivity(intent)
+            movieList.removeAt(newMovieView.id)
+            startActivityForResult(intent, MOVIE_REQUEST_CODE)
         }
         return newMovieView
     }
