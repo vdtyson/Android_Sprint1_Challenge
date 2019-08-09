@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.androidsprint1.MainActivity
 import com.example.androidsprint1.MainActivity.Companion.EDIT_MOVIE_DATA
 import com.example.androidsprint1.Model.Movie
 import com.example.androidsprint1.R
@@ -21,7 +20,7 @@ class EditActivity : AppCompatActivity() {
         }
 
         save.setOnClickListener {
-            var intentSaveMovie = Intent()
+            val intentSaveMovie = Intent()
             intentSaveMovie.putExtra("movie", createMovie())
 
             setResult(Activity.RESULT_OK, intentSaveMovie)
@@ -42,7 +41,7 @@ class EditActivity : AppCompatActivity() {
     }
     //
     fun createMovie(): Movie {
-        var newMovie = Movie(edit_text.text.toString(),switch_button.isChecked)
+        val newMovie = Movie(edit_text.text.toString(),switch_button.isChecked)
         return newMovie
     }
 }

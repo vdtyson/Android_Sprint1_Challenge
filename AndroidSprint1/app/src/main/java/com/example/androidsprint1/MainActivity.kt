@@ -29,9 +29,12 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, MOVIE_REQUEST_CODE)
         }
     }
+// TODO: fix refresh function
+/*
 // Line 32-42: Refreshes views onPostResume() so list is not duplicated
     fun refreshMovieList() {
         movie_text_linear_layout.removeAllViews()
+
         for ((index, movie) in movieList.withIndex())
             createTextView(movie, index)
     }
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         refreshMovieList()
         super.onPostResume()
     }
+*/
 // Line 44-46: after startActivityForResult gets Extras from the intent and populates movie data with it
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
@@ -52,7 +56,6 @@ class MainActivity : AppCompatActivity() {
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
-
 // Line 58-72: Programmatically creates TextView from user input and adds a listener to the data to retrieve Movie Data and Edit it
     fun createTextView(movie: Movie, index: Int): TextView {
 
