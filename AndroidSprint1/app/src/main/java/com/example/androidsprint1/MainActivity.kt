@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         if(requestCode == MOVIE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val movie = data?.getSerializableExtra("movie") as Movie
+            val movie: Movie = data?.getSerializableExtra("movie") as Movie
+
             if (movie != null) {
                 movieList.add(movie)
                 populateMovieData()
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
         val newMovieView = TextView(this)
 
-        if(movie.wasItWatched == true) {
+        if(movie.wasItWatched) {
             newMovieView.text = "${movie.title} ✔️"
         } else {
             newMovieView.text = "${movie.title} ❌"

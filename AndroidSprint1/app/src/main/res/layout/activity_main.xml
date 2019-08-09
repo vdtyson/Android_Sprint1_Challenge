@@ -10,6 +10,7 @@
 
     <Button android:layout_width="match_parent" android:layout_height="50dp" android:id="@+id/add_movie_button" android:text="Add Movie"/>
     <ScrollView
+            android:id="@+id/scrollView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

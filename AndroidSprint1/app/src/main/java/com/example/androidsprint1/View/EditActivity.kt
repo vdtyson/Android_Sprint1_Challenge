@@ -15,13 +15,13 @@ class EditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
 
-        var bundle: Bundle? = intent.extras
+        val bundle: Bundle? = intent.extras
         if(bundle != null) {
             loadMovie(bundle!!.getSerializable(EDIT_MOVIE_DATA) as Movie)
         }
 
         save.setOnClickListener {
-            val intentSaveMovie = Intent()
+            var intentSaveMovie = Intent()
             intentSaveMovie.putExtra("movie", createMovie())
 
             setResult(Activity.RESULT_OK, intentSaveMovie)
@@ -42,7 +42,7 @@ class EditActivity : AppCompatActivity() {
     }
     //
     fun createMovie(): Movie {
-        val newMovie = Movie(edit_text.text.toString(),switch_button.isChecked)
+        var newMovie = Movie(edit_text.text.toString(),switch_button.isChecked)
         return newMovie
     }
 }
