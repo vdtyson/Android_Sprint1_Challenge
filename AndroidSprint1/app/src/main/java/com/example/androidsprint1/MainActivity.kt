@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         const val MOVIE_REQUEST_CODE = 0
-        const val EDIT_MOVIE_DATA = "Some String"
+        const val EDIT_MOVIE_DATA = "EDIT_MOVIE_DATA"
     }
 
 
@@ -63,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             newMovieView.text = "${movie.title} ❌"
         }
         newMovieView.textSize = 24f
-        newMovieView.text = movie.title
         newMovieView.id = index
 
         // sets on click listener for new TextView which adds an intent to edit list item
