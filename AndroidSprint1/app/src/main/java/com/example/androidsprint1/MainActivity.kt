@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         if(requestCode == MOVIE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             val movie = data?.getSerializableExtra("movie") as Movie
+            val watched = data?.getStringExtra("watched") as String
             if (movie != null) {
                 movieList.add(movie)
                 populateMovieData()
