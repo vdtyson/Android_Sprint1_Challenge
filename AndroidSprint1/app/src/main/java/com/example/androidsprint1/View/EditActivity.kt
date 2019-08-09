@@ -34,9 +34,9 @@ class EditActivity : AppCompatActivity() {
     fun loadMovie(movie: Movie) {
         edit_text.setText(movie.title)
         if (movie.wasItWatched == true) {
-            switch_button.isChecked
+            switch_button.setChecked(true)
         } else {
-            !switch_button.isChecked
+            switch_button.setChecked(false)
         }
     }
     //
