@@ -22,18 +22,18 @@ class EditActivity : AppCompatActivity() {
         save.setOnClickListener {
             val intentSaveMovie = Intent()
             intentSaveMovie.putExtra("movie", createMovie())
-            if (switch_button.isChecked) {
-                intentSaveMovie.putExtra("watched", "watched")
-            }
-            else {
-                intentSaveMovie.putExtra("watched", "unwatched")
-            }
+
             setResult(Activity.RESULT_OK, intentSaveMovie)
             finish()
         }
     }
     fun loadMovie(movie: Movie) {
         edit_text.setText(movie.title)
+        if (movie.wasItWatched == true) {
+            switch_button.isChecked
+        } else {
+            switch_button.setCheck
+        }
     }
     fun createMovie(): Movie {
         var newMovie = Movie(edit_text.text.toString())

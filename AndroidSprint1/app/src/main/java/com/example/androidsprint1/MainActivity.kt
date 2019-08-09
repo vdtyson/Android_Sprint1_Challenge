@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
         if(requestCode == MOVIE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
             val movie = data?.getSerializableExtra("movie") as Movie
-            val watched = data?.getStringExtra("watched") as String
             if (movie != null) {
                 movieList.add(movie)
                 populateMovieData()
@@ -56,11 +55,19 @@ class MainActivity : AppCompatActivity() {
     }
 // Line 58-72: Programmatically creates TextView from user input and adds a listener to the data to retrieve Movie Data and Edit it
     fun createTextView(movie: Movie, index: Int): TextView {
-        val newMovieView = TextView(this)
-        newMovieView.textSize = 24f
-        newMovieView.id = index
-        newMovieView.text = movie.title
 
+        val newMovieView = TextView(this)
+
+        if(movie.wasItWatched == true) {
+            newMovieView.text = "${movie.title} ✔️"
+        } else {
+            newMovieView.text = "${movie.title} ❌"
+        }
+        newMovieView.textSize = 24f
+        newMovieView.text = movie.title
+        newMovieView.id = index
+
+        // sets on click listener for new TextView which adds an intent to edit list item
         newMovieView.setOnClickListener{
             val intent = Intent(this, EditActivity::class.java)
 
