@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
 // Line 32-42: Refreshes views onPostResume() so list is not duplicated
     fun refreshMovieList() {
         movie_text_linear_layout.removeAllViews()
-        populateMovieData()
+
+        for(i in 0 until movieList.size) {
+            movie_text_linear_layout.addView(createTextView(movieList[i], i))
+        }
     }
     override fun onPostResume() {
         refreshMovieList()
@@ -73,11 +76,5 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(intent, MOVIE_REQUEST_CODE)
         }
         return newMovieView
-    }
-//  Line 73-78: Populates movie data from list (used in line 46-56)
-    fun populateMovieData() {
-        for(i in 0 until movieList.size) {
-            movie_text_linear_layout.addView(createTextView(movieList[i], i))
-        }
     }
 }
