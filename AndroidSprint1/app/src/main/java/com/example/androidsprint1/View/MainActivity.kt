@@ -1,13 +1,12 @@
-package com.example.androidsprint1
+package com.example.androidsprint1.View
 
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.TextView
 import com.example.androidsprint1.Model.Movie
-import com.example.androidsprint1.View.EditActivity
+import com.example.androidsprint1.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

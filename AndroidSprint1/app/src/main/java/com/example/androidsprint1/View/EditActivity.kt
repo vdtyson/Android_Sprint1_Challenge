@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.androidsprint1.MainActivity.Companion.EDIT_MOVIE_DATA
+import com.example.androidsprint1.View.MainActivity.Companion.EDIT_MOVIE_DATA
 import com.example.androidsprint1.Model.Movie
 import com.example.androidsprint1.R
 import kotlinx.android.synthetic.main.activity_edit.*
